@@ -1,0 +1,11 @@
+.tasks{
+    margin: 3rem auto;
+    max-width: 40rem;
+    padding:2rem;
+}
+.tasks p{
+    text-align: center;
+}
+.custom-link{
+    text-decoration: none;
+}

@@ -1,0 +1,39 @@
+.task-title{
+    display:flex;
+    align-items: center;
+}
+.span{
+    background-color: var(--primary);
+    color: var(--clr-white);
+    padding: 4px 8px;
+    border-radius: 999px;
+}
+.task-title i{
+    font-size: 24px;
+    margin-left: 15px;
+    cursor:pointer;
+}
+.tasks-time{
+    flex:1;
+}
+.tasks-time h2,.tasks-time p{
+    display: inline-block;
+    margin-left: 10px;
+}
+.taskListButton{
+    width: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid var(--secondary);
+    font-size: inherit;
+    margin: 20px auto;
+    padding: 0.4rem;
+    background: transparent;
+    color:var(--primary);
+}
+.taskListButton i{
+    margin:5px;
+    font-size: 12px;
+}

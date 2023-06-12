@@ -1,0 +1,9 @@
+.title{
+    margin:0.5rem 0 2.5rem;
+    text-align: center;
+}
+.title i{
+    color: var(--primary);
+    font-size:28px;
+    float: left;
+}

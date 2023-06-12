@@ -1,0 +1,28 @@
+.task-list{
+    margin: 20px 0;
+}
+.task-list li{
+    display: flex;
+    align-items: center;
+}
+.task-list li i{
+    margin:0 10px;
+    color: var(--primary);
+    cursor:pointer;
+}
+.task-list p{
+    flex:1;
+    padding-left: 20px;
+}
+.task-list h3{
+    display: inline-block;
+}
+.task-list button{
+    border:1px solid var(--secondary);
+    width:10px;
+    height:10px;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 20px;
+}
