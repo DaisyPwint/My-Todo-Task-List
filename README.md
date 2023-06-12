@@ -13,14 +13,14 @@ This project is my first experience with React.It's a simple and efficient task 
 
 ## Features
 
--Create, update, and delete tasks
--Intuitive user interface
+-Create, update, and delete tasks <br>
+-Intuitive user interface <br>
 -Task prioritization
 
 ## Getting Started
 
--Clone the repository: `git clone https://github.com/your-username/your-repository.git`
--Install dependencies: `npm install`
+-Clone the repository: `git clone https://github.com/your-username/your-repository.git` <br>
+-Install dependencies: `npm install` <br>
 -Run the application: `npm start`
 
 # Demo Link
@@ -29,7 +29,7 @@ Live Demo: [https://phoo-todo-task-list.netlify.app/]
 
 # Built with
 
--Semantic HTML5 markup
--CSS custom properties
+-Semantic HTML5 markup <br>
+-CSS custom properties <br>
 -react js 
 
