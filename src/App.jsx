@@ -22,6 +22,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [tasksList,setTasksList] = useState([]);
+  
   const addTaskHandler = (tName,tDate) => {
     const newTask = {name: tName, date: tDate, id: uuidv4()};
     setTasksList((prev) => [...prev,newTask]);

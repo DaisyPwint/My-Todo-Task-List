@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import ErrorModal from './ShowModal';
+import ShowModal from './ShowModal';
 import classes from './TaskTitle.module.css';
 import TaskList from "./TaskList";
 
@@ -7,6 +7,11 @@ const TaskTitle = ({tasksData,handleTaskData,onUpdatedTasks}) => {
 
   const [lists,setLists] = useState(tasksData.lists || []);
   const [showModal,setShowModal] = useState(false);
+  const [isExpanded,setIsExpanded] = useState(false);
+
+  const toggleAccordion = () => {
+    setIsExpanded(prev => !prev)
+  }
 
   let dateString = tasksData.date; 
   let data = new Date(dateString);
@@ -35,21 +40,24 @@ const TaskTitle = ({tasksData,handleTaskData,onUpdatedTasks}) => {
     
   return (
     <>    
-      <div className={classes["task-title"]}>
+      <div className={classes["task-title"]} onClick={toggleAccordion}>
         <div className={classes["tasks-time"]}>
+          <i className={`fa-solid fa-caret-${isExpanded ? 'down' : 'right'}`}></i>
           <h2>{tasksData.name}</h2>
           <p>{`${day}, ${date} ${month} ${year}`}</p>
         </div>
         <span className={lists.length > 0 ? classes.span : ''}>{lists.length !== 0 ? `${lists.length} ${lists.length === 1 ? 'task' : 'tasks'}` : ''}</span>
         <i className="fa-solid fa-circle-xmark" onClick={() => handleTaskData(tasksData.id)}></i>
       </div>
-      <TaskList lists={lists} handleRemove={handleRemove} handleEdit={handleEdit} />      
+      {
+        isExpanded && (<TaskList lists={lists} handleRemove={handleRemove} handleEdit={handleEdit} />)
+      }      
       <button className={classes.taskListButton} onClick={() => setShowModal(true)}>
         <i className="fa-solid fa-plus"></i>Add new List
       </button>  
       {
         showModal && 
-        <ErrorModal listData={listItemHandler} onHideModal={() => setShowModal(false)}/>
+        <ShowModal listData={listItemHandler} onHideModal={() => setShowModal(false)}/>
       }
     </>
   )
