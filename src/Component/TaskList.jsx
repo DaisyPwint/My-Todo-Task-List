@@ -4,6 +4,12 @@ import classes from './TaskList.module.css';
 
 const TaskList = (props) => {
   const [editModal,setEditModal] = useState(false);  
+  const [selectedList,setSelectedList] = useState(null);
+
+  const handleEdit = (list) => {
+    setSelectedList(list);
+    setEditModal(true);
+  }
   
   return (
       <>
@@ -14,7 +20,7 @@ const TaskList = (props) => {
               <button></button>
               <h3>{list.name}</h3>
               <p>{list.time}</p>
-              <i className="fa-solid fa-pen-to-square" onClick={() => setEditModal(true)}></i>
+              <i className="fa-solid fa-pen-to-square" onClick={() => handleEdit(list)}></i>
               <i className="fa-solid fa-trash" onClick={() => props.handleRemove(list.id)}></i>
             </li>
           )
@@ -22,7 +28,7 @@ const TaskList = (props) => {
       </ul>
       {      
         editModal && props.lists.map((list) =>
-         <EditModal key={list.id} lists={list} 
+        <EditModal key={list.id} lists={selectedList} 
         updateData={props.handleEdit}
         onHideModal={() => setEditModal(false)}/>)
       }
